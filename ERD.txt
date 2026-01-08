@@ -1,0 +1,30 @@
+users {
+	id int pk
+	name varchar
+	email varchar
+	password varchar
+}
+
+books {
+	id int pk
+	title varchar
+	publisher varchar
+}
+
+reviews {
+	id int pk
+	user_id int > users.id
+	book_id int > books.id
+	score int
+}
+
+genres {
+	id int pk
+	name varchar
+}
+
+books_genres {
+	id int pk
+	book_id int > books.id
+	genre_id int > genres.id
+}
